@@ -1,0 +1,5 @@
+spring:
+  config:
+    active:
+      on-profile: prod
+message: Hello from prod profile

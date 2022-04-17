@@ -1,9 +1,14 @@
 package com.kotlinspring.controller.service
 
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 
 @Service
 class GreetingService {
 
-    fun retrieveGreeting(name: String) = "Hello $name"
+    // dynamically populate the value from application.yml
+    @Value("\${message}")
+    lateinit var message: String
+
+    fun retrieveGreeting(name: String) = "$name, $message"
 }
