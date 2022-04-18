@@ -1,11 +1,18 @@
 spring:
   application:
     name: course-catalog-service
-message: Hello from default profile
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    show-sql: true
+  h2:
+    console:
+      enabled: true
 
-#---
-#spring:
-#  config:
-#    active:
-#      on-profile: prod
-#message: Hello from prod profile
+message: Hello from default profile
