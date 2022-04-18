@@ -1,6 +1,6 @@
 package com.kotlinspring.controller
 
-import com.kotlinspring.controller.service.GreetingService
+import com.kotlinspring.service.GreetingService
 import mu.KLogging
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

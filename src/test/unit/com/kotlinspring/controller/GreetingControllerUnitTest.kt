@@ -1,6 +1,6 @@
 package com.kotlinspring.controller
 
-import com.kotlinspring.controller.service.GreetingService
+import com.kotlinspring.service.GreetingService
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
 import org.junit.jupiter.api.Assertions
