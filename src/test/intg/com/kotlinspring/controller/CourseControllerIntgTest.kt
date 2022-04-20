@@ -84,4 +84,16 @@ class CourseControllerIntgTest {
 
         assertEquals("Build Restful APIs using SpringBoot and Kotlin1", updatedCourse!!.name)
     }
+
+    @Test
+    fun deleteCourse(){
+        val course = Course(null, "Build Restful APIs using SpringBoot and Kotlin", "Development")
+        courseRepository.save(course)
+
+        val updatedCourse = webTestClient
+            .delete()
+            .uri("/v1/courses/{courseId}", course.id)
+            .exchange()
+            .expectStatus().isNoContent
+    }
 }
