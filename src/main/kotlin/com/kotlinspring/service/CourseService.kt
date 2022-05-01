@@ -32,8 +32,8 @@ class CourseService(val courseRepository: CourseRepository) {
         } ?:  courseRepository.findAll()
 
         return courses.map {
-                CourseDTO(it.id, it.name, it.category)
-            }
+            CourseDTO(it.id, it.name, it.category)
+        }
     }
 
     fun updateCourse(courseId: Int, courseDTO: CourseDTO): CourseDTO {

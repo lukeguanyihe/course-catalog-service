@@ -68,20 +68,20 @@ class CourseControllerIntgTest {
 
     @Test
     fun retrieveAllCourses_Byname() {
-        UriComponentsBuilder.fromUriString("v1/courses")
+        val uri = UriComponentsBuilder.fromUriString("v1/courses")
             .queryParam("course_name", "SpringBoot")
             .toUriString()
 
         val courseDTOs = webTestClient
             .get()
-            .uri("/v1/courses")
+            .uri(uri)
             .exchange()
             .expectStatus().isOk
             .expectBodyList(CourseDTO::class.java)
             .returnResult()
             .responseBody
 
-        assertEquals(3, courseDTOs!!.size)
+        assertEquals(2, courseDTOs!!.size)
     }
 
     @Test
