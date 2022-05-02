@@ -15,4 +15,8 @@ data class Course(
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name="INSTRUCTOR_ID", nullable = false)
     val instructor: Instructor? = null
-)
+){
+    override fun toString(): String {
+        return "Course(id=$id, name='$name', category='$category', instructor=$instructor!!.id)"
+    }
+}
