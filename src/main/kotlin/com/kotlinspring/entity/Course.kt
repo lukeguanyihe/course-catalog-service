@@ -17,6 +17,6 @@ data class Course(
     val instructor: Instructor? = null
 ){
     override fun toString(): String {
-        return "Course(id=$id, name='$name', category='$category', instructor=$instructor!!.id)"
+        return "Course(id=$id, name='$name', category='$category', instructor=${instructor!!.id})"
     }
 }
